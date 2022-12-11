@@ -2,7 +2,7 @@
 // @name         Pikabu COUB.COM preview
 // @name:ru      Pikabu COUB.COM preview
 // @namespace    http://pikabu.ru/
-// @version      0.2
+// @version      0.3
 // @description  Shows COUB.COM videos on PIKABU.RU
 // @description:ru  Преобразует ссылки на видео с сайта COUB.COM в полноценные превью
 // @author       Rhoads
@@ -17,14 +17,14 @@
 
 	function enumerateComments()
 	{
-		document.querySelectorAll('div.comments__container > .comment > .comment__body > .comment__content').forEach((commentBody) => rewriteComment(commentBody));
+		document.querySelectorAll('div.comments__container > .comment > .comment__body > .comment__content').forEach((commentContent) => rewriteComment(commentContent));
 	}
 
-	function rewriteComment(commentBody)
+	function rewriteComment(commentContent)
 	{
-		//console.log(`[PIKABU - COUB PREVIEW] commentBody: ${commentBody.innerHTML}`);
+		//console.log(`[PIKABU - COUB PREVIEW] commentContent: ${commentContent.innerHTML}`);
 
-		commentBody.innerHTML = commentBody.innerHTML.replace(/<a href=\"https?:\/\/coub.com\/view\/(\w+)\" target=\"_blank\" rel=\"nofollow noopener\">https?:\/\/coub.com\/view\/\w+<\/a>/, replacer);
+		commentContent.innerHTML = commentContent.innerHTML.replace(/<a href=\"https?:\/\/coub.com\/view\/(\w+)\" target=\"_blank\" rel=\"nofollow noopener\">https?:\/\/coub.com\/view\/\w+<\/a>/, replacer);
 	}
 
 	function replacer(match, coub)
