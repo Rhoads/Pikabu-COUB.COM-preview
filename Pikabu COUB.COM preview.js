@@ -2,7 +2,7 @@
 // @name         Pikabu COUB.COM preview
 // @name:ru      Pikabu COUB.COM preview
 // @namespace    http://pikabu.ru/
-// @version      0.1
+// @version      0.2
 // @description  Shows COUB.COM videos on PIKABU.RU
 // @description:ru  Преобразует ссылки на видео с сайта COUB.COM в полноценные превью
 // @author       Rhoads
@@ -24,7 +24,7 @@
 	{
 		//console.log(`[PIKABU - COUB PREVIEW] commentBody: ${commentBody.innerHTML}`);
 
-		commentBody.innerHTML = commentBody.innerHTML.replace(/<a href=\"https:\/\/coub.com\/view\/(\w+)\" target=\"_blank\" rel=\"nofollow noopener\">https:\/\/coub.com\/view\/\w+<\/a>/, replacer);
+		commentBody.innerHTML = commentBody.innerHTML.replace(/<a href=\"https?:\/\/coub.com\/view\/(\w+)\" target=\"_blank\" rel=\"nofollow noopener\">https?:\/\/coub.com\/view\/\w+<\/a>/, replacer);
 	}
 
 	function replacer(match, coub)
