@@ -2,7 +2,7 @@
 // @name         Pikabu COUB.COM preview
 // @name:ru      Pikabu COUB.COM preview
 // @namespace    http://pikabu.ru/
-// @version      0.3
+// @version      0.4
 // @description  Shows COUB.COM videos on PIKABU.RU
 // @description:ru  Преобразует ссылки на видео с сайта COUB.COM в полноценные превью
 // @author       Rhoads
@@ -17,7 +17,7 @@
 
 	function enumerateComments()
 	{
-		document.querySelectorAll('div.comments__container > .comment > .comment__body > .comment__content').forEach((commentContent) => rewriteComment(commentContent));
+		document.querySelectorAll('div.comments__container > div.comment div.comment__body > div.comment__content').forEach((commentContent) => rewriteComment(commentContent));
 	}
 
 	function rewriteComment(commentContent)
